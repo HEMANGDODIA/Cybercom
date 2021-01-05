@@ -1,0 +1,32 @@
+date: 5/1/2021
+
+Today I get basic idea of git and some unknow think i know during my practice and meeting session.
+so,I can try to tell it with my today's experience.
+
+as per instruction given by sir, i follow it and installed require software.
+
+after that I can create repository  in my local machine which step i know previously so no need confusion for that but how to use branch and commit it is new topic for me.
+
+so, after that i can perform stepwise process like
+step 1: Register Account => as per i say i know how to create repository it easy for me, yes screenshot also me sometime.
+step 2:Generate SSH Key => for this topic i didn't know about SSH key and commad for generate SSH key :
+                                                             $ ssh-keygen -t rsa -C "dodiyahemang48@gmail.com". so learn throgh screenshot and also meeting 
+step 3:Cloning project in local machine =>inthis step I learn how to clone project directory using get bash in our machine and  command like:
+                                                                                        $ git  clone git@github.com:HEMANG-DODIA/batman.git batman/
+step 4:Git Command:some important command introduce by this step like
+              $ git remote -v:- for known nickname of our repository
+              $git fetch origin:-use for latest update in our repository
+              $ git checkout -b batman-bike origin/main:- create new branch (bike) from main (batman)
+              $ git status:- using i did identified new branch.
+              $ git add index.php:- using we can add our file(index.php) in commit list.
+              $ git commit -m "index.php added":use for save our change with a message .
+              $ git push origin batman-bike: using push our change in repository.
+             $ git chechout main :using switch to our main branch
+            $git fetch origin:using we can fetch it to our repository 
+           $git merge --no-ff origin/batman-bike:using merge branch to main.(i face some problem during executing this command but throgh screenshot i understood my error
+          $git push origin main : push all to main repository 
+          after that  i did some change in index.php file and save it after that use $git status  command for check change in commit list and also use $git diff command for specifice details like instertion.
+
+
+
+              
