@@ -5,6 +5,8 @@ Topic: Git & Github
 date: 5/1/2021
 >>>>>>> parent of 2f3145c (change file)
 
+Date:05/01/21
+
 Today I get basic idea of git and some unknow think i know during my practice and meeting session.
 so,I can try to tell it with my today's experience.
 

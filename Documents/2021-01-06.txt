@@ -1,0 +1,22 @@
+Date :- 06/01/2021
+Topic:- Git & Gihub
+
+Today,I learn some new feture of github and some command of git.
+
+1) I learn extra feture like restore and other command like
+$git log :- which one is usefull for show all details of commited words and it also show Head no which is use for revert commited data
+$git revert  Head no:- using this command we can restore or retrive all data throgh Head no (including merge also)
+ 
+=> one task was gave by sir which is:
+
+-if I have one main branch and one another branch main1.
+-so i can switch main to main1 then if I can change file data in main1 after commit  & push 
+-merge this main1 branch to main branch and push.
+-after then i can again change in main1 then commit for that I see diff using $git diff .
+-so for that i can use fetch command($git fetch origin main1) for add change data .
+
+for follwing task i learn and follow this step
+
+=>other think I was learn is
+
+-whenever we want to recover 15 days ago data then use headno of merge command  then using $git revert  headno.
