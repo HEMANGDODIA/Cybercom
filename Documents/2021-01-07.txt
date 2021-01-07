@@ -1,0 +1,19 @@
+Date:- 07/01/2021
+Topic :- Git & Github
+
+Today, I did know about diffent query for git command.
+
+-->like difference between rebase and merge means Git rebase moves a feature branch into a master. 
+-Git merge adds a new commit, preserving the history so that using Git rebase we can't able to revent data
+
+-->After that I learn different type vof reset like soft,hard and mixed and it's use and also clear difference between reset and revent 
+-we can say that reset affects all files in the current branch on the repository, not just those in your current directory. 
+-Reset only discards changes that haven't been committed yet. 
+-where  git revert command is a forward-moving undo operation that offers a safe method of undoing changes. 
+Instead of deleting or orphaning commits in the commit history, a revert will create a new commit that inverses the changes specified.
+
+so today we get some useful information from sir for how can we carefully use git 
+1. git command configure like improve message rading capability
+2. some basic & import command => add commit push log 
+ 
+ 
