@@ -1,0 +1,56 @@
+figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 215px;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+.img {
+    background-color: #333333;
+    width: 215px;
+    height: 315px;
+    color: #ffffff;
+    line-height: 300px; 
+    text-align: center;    
+    font-family: smaller sans-serif;
+    font-size: 18px;
+
+}
+
+figcaption {
+    background-color: #DCDCDC;
+    color: #808080;
+    font: smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+
+
+.img2
+{  
+ float:left;
+}  
+.img3  
+{  
+float:left;  
+}  
+.img1  
+{  
+float:left;  
+}  
+.img4 
+{  
+float:left;  
+}  
+.caption{
+float: left;
+color: #808080;
+text-align: center;
+margin-left: 50px;
+margin-right: 110px;
+border-bottom:1px solid;
+}
