@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function showAlert(){
+			alert("Your request has been submitted !");
+		}
+	</script>
+	<title>Practice 6</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	 .input-icons i { 
+            position: absolute; 
+        } 
+          
+        .input-icons { 
+            width: 100%; 
+            margin-bottom: 10px; 
+        } 
+          
+        .icon {
+            color: transparent;
+            -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #A9A9A9; 
+            padding: 30px; 
+            min-width: 40px; 
+        } 
+          
+        .input-field { 
+            width: 100%; 
+            padding: 10px; 
+            margin-top: 20px;
+            text-align: center; 
+        } 
+        ::placeholder { 
+        	color: #A9A9A9 ;
+        	opacity: 1;
+
+        }
+        .button{
+        	border:none;
+        	color: white;
+        	background-color: #8A2BE2;
+        	font-size: 12px;
+        	padding: 10px 30px;
+        	cursor: pointer;
+        	text-align: center;
+        	outline: none;
+        	border-radius: 25px;
+        	margin-top: 20px;
+        	box-shadow: 0 9px #999;
+
+        }
+</style>
+</head>
+<body>
+<div ><img class="mySlides" src="1.jpg" style="width: 500px;margin-left: 440px"></div>
+<div style="max-width: 400px;margin: auto;">
+
+	<div class="input-icons">
+		<i class="fa fa-user icon"></i>
+		<input class="input-field" type="text" placeholder="Full name">
+		<i class="fa fa-envelope icon"></i>
+		<input type="text" class="input-field" placeholder="Eg. example@email.com">
+		<i class="fa fa-mobile icon"></i>
+		<input class="input-field" type="text" placeholder="Eg. +1800 000000">
+		<i class="fa fa-comment icon"></i>
+		<input class="input-field" style="height:100px;" type="text" placeholder="Your comments... ">
+		<center><button type="Submit" class="button" onclick="showAlert()">SEND NOW</button></center>
+	</div>
+</div>
+</body>
+</html>
