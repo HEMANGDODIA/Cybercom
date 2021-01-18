@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice 7</title>
+<style >
+form div {
+clear: left;
+margin: 10px;
+padding: 0;
+padding-top: 5px;
+}
+input {
+	vertical-align: middle;
+	margin: ;
+
+}
+</style>
+
+
+
+</head>
+<body>
+<form method="post" action="Success.html">
+<fieldset>
+<legend>Your address</legend>	
+<div>
+<label for="firstname">First name</label>
+<input type="text" name="firstname" id="firstname" class="txt" style="margin-left: 72px" />
+</div>
+<div>
+	<label for="lastname">Last name</label>
+	<input type="text" name="lastname" id="lastname" class="txt" style="margin-left: 72px;" />
+</div>
+<div>
+	<label for="street">Street</label>
+	<input type="text" name="street" class="street" id="street" style="margin-left: 100px;" />
+</div>
+<div>
+	<label for="city">City</label>
+	<input type="text" name="city" class="city" style="margin-left: 109px;" id="city"/>
+</div>
+</fieldset>
+<fieldset>
+<legend>Additional details</legend>
+<div>
+<label for="Biography">Biography</label>
+<textarea id="Biography" rows="3" cols="25" style="margin-left: 68px" ></textarea>
+</div>
+<div>
+	<label for="image">Image</label>
+	<input type="file" name="file" style="margin-left: 98px;">
+</div>
+<div>
+	<label for="agegroup">Age Group</label>
+	<select name="agegroup" style="margin-left: 65px;">
+		<option value="0 to 9 Years">0 to 9 Years</option>
+		<option value="10 to 18 Years">10 to 18 Years</option>
+		<option value="19 to 25 years">19 to 25 years</option>
+	</select>
+</div>
+</fieldset>
+<fieldset>
+	<legend>Interests</legend>
+	<div>
+		<label for="hobbies">Hobbies</label>
+		<input type="checkbox" name="hobbies" value="playingsoccer" style="margin-left: 80px"> Playing soccer<br>
+		<input type="checkbox" name="hobbies" value="dancing" style="margin-left: 136px"> Hobbies <br>
+		<input type="checkbox" name="hobbies" value="gardening" style="margin-left: 136px;">Gardening<br>
+		<input type="checkbox" name="hobbies" value="watchingmovies" style="margin-left: 136px">Watching movies<br>
+	</div>
+	<div>
+		<label for="favouritecar">Favourite Car?</label>
+		<select name="favouritecar" style="margin-left: 30px;">
+			<option value="Volve">Volve</option>
+			<option value="BMW">BMW</option>
+			<option value="OD">OD</option>
+		</select>
+
+	</div>
+	<div>
+		<label for="Favourite public transport?">Favourite public transport?</label>
+		<b><label for="Ground" style="margin-left: 10px">Ground</label></b><br>
+		<input type="radio" name="Ground" value="Train" style="margin-left: 210px;">Train<br>
+		<input type="radio" name="Ground" value="Bus" style="margin-left: 210px;">Bus<br>
+		<b><label for="Water" style="margin-left: 190px">Water</label></b>
+	</div>
+</fieldset>
+<input type="submit" name="submit" style="margin-top: 20px;margin-left: 20px;">
+<input type="reset" name="Reset" style="margin-top: 20px;margin-left: 40px" >
+</form>
+</body>
+</html>
