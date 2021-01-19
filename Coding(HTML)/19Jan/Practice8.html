@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<title>Practice 8</title>
+<style>
+form{
+	border: 1px solid #A9A9A9;
+	background-color: #F0FFFF;
+	margin-left: 10px;
+}
+form div {
+clear: left;
+margin: 10px;
+padding: 0;
+padding-top: 5px;
+}
+form div label {
+float: left;
+width: 40%;
+font: 0.9em Arial, Helvetica, sans-serif;
+}	
+</style>
+<script type="text/javascript">
+	function validteform(){
+	var a=document.forms["Form"]["firstname"].value;
+	var b=document.forms["Form"]["email"].value;
+	var c=document.forms["Form"]["password"].value;
+	var d=document.forms["Form"]["phone"].value;
+	/*if (a == null || a == ) {
+		alert("Please Fill All Required Field");
+		return false;*/
+	}
+	if (b == null || b == "") {
+		alert("Please Fill All Required Field");
+		return false;
+	}
+	if else(c == null || c == "") {
+		alert("Please Fill All Required Field");
+		return false;
+	}
+	if else(d == null || d == "") {
+		alert("Please Fill All Required Field");
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+
+<form method="post" name="Form" action="Information.php" onsubmit="return validteform()">
+<div id="Personal Information">
+	<h3>Personal Information</h3>
+	<div>
+		<label>First Name</label>
+		<input type="text" name="firstname" id="a" required/>
+	</div>
+	<div>
+		<label>Last Name</label>
+		<input type="tetx" name="lastname">
+	</div>
+	<div>
+		<label>Date of Birth</label>
+		<select name="month" required> <option value=''>Month</option>
+			<option value="Jan">Jan</option>
+			<option value="Feb">Feb</option>
+			<option value="March">March</option>
+			<option value="April">April</option>
+			<option value="May">May</option>
+			<option value="June">June</option>
+			<option value="July">July</option>
+			<option value="August">August</option>
+			<option value="September">September</option>
+			<option value="October">October</option>
+			<option value="November">November</option>
+			<option value="December">December</option>
+
+		</select>
+		<select name="day" ><option name='Day' value="">Day</option>
+			<option value="1">01</option>
+			<option value="2">02</option>
+			<option value="3">03</option>
+			<option value="4">04</option>
+			<option value="5">05</option>
+			<option value="6">06</option>
+			<option value="7">07</option>
+			<option value="8">08</option>
+			<option value="9">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+			<option value="24">24</option>
+			<option value="25">25</option>
+			<option value="26">26</option>
+			<option value="27">27</option>
+			<option value="28">28</option>
+			<option value="29">29</option>
+			<option value="30">30</option>
+			<option value="31">31</option>
+			
+		</select>
+		<select name="year" ><option value="year">Year</option>
+			<option value="1990">1990</option>
+			<option value="1991">1991</option>
+			<option value="1992">1992</option>
+			<option value="1993">1993</option>
+			<option value="1994">1994</option>
+			<option value="1995">1995</option>
+			<option value="1996">1996</option>
+			<option value="1997">1997</option>
+			<option value="1998">1998</option>
+			<option value="1998">1999</option>
+			<option value="2000">2000</option>
+			<option value="2001">2001</option>
+			<option value="2002">2002</option>
+			<option value="2003">2003</option>
+			<option value="2004">2004</option>
+			<option value="2005">2005</option>
+			<option value="2006">2006</option>
+			<option value="2007">2007</option>
+			<option value="2008">2008</option>
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+			<option value="2021">2021</option>
+
+		</select>
+		<i class="fa fa-question-circle" style="font-size:20px;color: #87CEFA;margin-left: 5px"></i>
+	</div>
+	<div>
+		<label>Gender:</label>
+		<select name="gender">
+			<option value="gender">Choose a Gender</option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="other">Other</option>
+		</select>
+		<i class="fa fa-question-circle" style="font-size:20px;color:#87CEFA;margin-left: 5px"></i>
+	</div>
+
+</div>
+<div id="Account Information">
+	<h3>Account Information</h3>
+	<div>
+		<label> Email:</label>
+		<input type="text" name="email" id="b" required/>
+		<br><label style="margin-left: 510px;">(Your email address will be your username)</label>
+
+	</div>
+	<div>
+		<label>Re-type Email:</label>
+		<input type="tetx" name="retypeemail"/>
+	</div>
+	<div>
+		<label>Password:</label>
+		<input type="Password" name="password" id="c" required/>
+	</div>
+
+	<div>
+		<label>Re-type Password:</label>
+		<input type="Password" name="retypepassword"/>
+	</div>
+	<div>
+		<label>Security Question:</label>
+		<select name="securityquestion">
+			<option value="chooseasecurityqueston">Choose a security question</option>
+			<option value="birth's year">Birth Year</option>
+			<option value="your nickname">Your Nickname</option>
+		</select>
+	</div>
+	<div>
+		<label>Security Answer:</label>
+		<input type="text" name="securityans"/>
+		<i class="fa fa-question-circle" style="font-size:20px;color:#87CEFA;margin-left: 5px"></i>
+		<br><label style="margin-left: 510px;">(Not case-sensitive)</label>
+	</div>
+</div>
+<div id="Contact Information">
+	<h3>Contact Information</h3>
+	<div>
+		<label>Address</label>
+		<input type="text" name="address"/>
+	</div>
+	<div>
+		<label>City</label>
+		<input type="text" name="city">
+	</div>
+	<div>
+		<label>State</label>
+		<select name="state">
+			<option value="choose a state">Choose a state</option>
+			<option value="Gujarat">Gujarat</option>
+			<option value="Maharastra">Maharastr</option>
+			<option value="Rajestan">Rajestan</option>
+		</select>
+	</div>
+	<div>
+		<label>Zip Code</label>
+		<input type="text" name="zipcode"/>
+	</div>
+	<div>
+		<label>Phone:</label>
+		<input type="Phone" name="phone" id="d" required/>
+		<i class="fa fa-question-circle" style="font-size:20px;color: #87CEFA;margin-left: 5px"></i>
+		<select name="mobile">
+			<option value="Mobile">Mobile</option>
+			<option value="+91">+91</option>
+			<option value="+1">+1</option>
+		</select>
+		<br>
+		<label style="margin-left: 510px;">No spaces or dashes</label>
+	</div>
+</div><br>
+<input type="submit" name="Submit" style="margin-left: 20px;margin-top: 20px" onsubmit="return validteform()">
+<input type="reset" name="Reset" style="margin-left: 40px;margin-top: 20px">	
+</form>
+</body>
+</html>
