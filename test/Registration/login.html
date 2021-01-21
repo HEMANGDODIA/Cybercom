@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" />
     <title> Login</title>
-    <style>
-
-    </style>
+    <script src="script.js">
+        
+    </script>
 </head>
 
 <body>
@@ -17,16 +17,17 @@
     </center>
     <form>
         <div class="container">
+            <input type="text" placeholder="Email" name="username" id="uemail" required>
 
-            <input type="text" placeholder="Email" name="username" required>
-
-            <input type="password" placeholder="Password" name="password" required>
-            <button type="submit">LOGIN</button>
+            <input type="password" placeholder="Password" name="password" id="upassword" required>
+            <button type="submit" value="Login" onclick="login();">LOGIN</button>
             <center>OR</center>
-            <button><a href="Register.html" class="reg-btn">REGISTER NOW</a></button>
+            <button><a href="Register.html" style="color: inherit; text-decoration:none;cursor:pointer;" class="reg-btn">REGISTER NOW</a></button>
+            </form>
 
         </div>
-    </form>
+
+    
 </body>
 
 </html>
