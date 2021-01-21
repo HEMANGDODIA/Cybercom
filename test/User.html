@@ -44,16 +44,17 @@ array=item;
 <a href="Logout.html">Logout</a>
 </div>
 <div class="main">
+
 <h6>Add User</h6>
-  <form action = "list.html">
+  <form>
   
         <input type="text" class = "input" id="name" name="name" id="name" placeholder="Name" required></input>
         <input type="email" class = "input" id="email" name="email" id="email" placeholder="Email" required></input>
         <input type="password" class = "input" id="password" name="password" id="password" placeholder="Password" required></input>
-        <input type="date" class="input" id="dateOfBirth" name="dateOfBirth" id="birthdate" placeholder="Birthdate" required />
+        <input type="date" class="input"  name="dateOfBirth" id="birthdate" placeholder="Birthdate" required />
         
 
-       <button type="submit class="btn" name="Add User" value = "Add" onclick="adduserElement()">Add User</button>
+       <button type="submit" class="btn" name="Add User" value = "Add" onclick="adduserElement()">Add User</button>
 
     
   </form>
@@ -61,13 +62,13 @@ array=item;
   <table style="border:1px solid black; color:#A9A9A9;border-color: #A9A9A9; font-size: 12px;"  >
     <tr style="background-color:black;padding: 300px">
       <th>Name</th>
-      <th style="padding-left: 60px;">Email</th>
-      <th style="padding-left: 60px;">Password</th>
+      <th style="padding-left: 80px;">Email</th>
+      <th style="padding-left: 10px;">Password</th>
       <th style="padding-left: 60px;">Birthdate</th>
-      <th style="padding-left: 60px;">Age</th>
-      <th style="padding-left: 60px;">Action</th>
+      <th style="padding-left: 50px;">Age</th>
+      <th style="padding-left: 160px;">Action</th>
     </tr>
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
     <script type="text/javascript">
     var array = localStorage.getItem('array2');
     var items = JSON.parse(array);
@@ -87,8 +88,15 @@ array=item;
       {
         for(var k = 0 ; k < array.length; k++)
         { 
+
           document.write('<td>'+ array[k].name + '</td>' );
           document.write('<td>'+ array[k].email + '</td>' );
+          document.write('<td>'+ array[k].password + '</td>' );
+          document.write('<td>'+ array[k].birthdate + '</td>' );
+          document.write('<td>'+ 'age'+ '</td>' );
+          document.write('<td> <a href="Update.html">Edit</a>  </td>' );
+          document.write('<td> <a href="Update.html">Delete</a>  </td>' );
+          
           
           document.write('</tr>');
         }
