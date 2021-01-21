@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+<script src="script2.js"> </script>
+<script type="text/javascript">// get data from localstorage
+var array=localStorage.getItem('array2');
+var item=JSON.parse(array);
+
+array=item;	
+
+</script>
+
+</head>
+<body>
+<div class="sidenav">
+<h3 style="color: white;margin-left:5px;">Hello, 
+<script type="text/javascript">
+	//document.write(array.name);
+	if(array === null )
+			{
+				alert("Records not found!");
+				
+			}			
+			else
+			{
+	for(var k = 0 ; k < array.length; k++)
+				{	
+					document.write(" " + array[k].name);
+					
+				}
+			}
+</script>
+</h3>
+<a href="sub-user.html">Dashboard</a>
+<a href="Logoutuser.html">Logout</a>
+</div>
+<div class="main">
+	<h6>Welcome to Cybercom Creation</h6>
+
+    <center><h1>Happy Birthdy!</h1></center>
+</div>
+
+</body>
+</html>
