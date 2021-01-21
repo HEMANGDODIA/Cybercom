@@ -4,6 +4,9 @@
   <title>User</title>
 
 <script src="Registation/script.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="js/script.js"></script>
 <script type="text/javascript">// get data from localstorage
 var array=localStorage.getItem('array');
 var item=JSON.parse(array);
@@ -12,46 +15,8 @@ array=item;
 
 </script>
 
-<style>
-  body {
-  font-family: "Lato", sans-serif;
-}
 
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #D2691E;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: white;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="sidenav">
@@ -82,13 +47,13 @@ array=item;
 <h6>Add User</h6>
   <form action = "list.html">
   
-        <input type="text" class = "input" id="name" name="name" placeholder="Name" required></input>
-        <input type="email" class = "input" id="email" name="email" placeholder="Email" required></input>
-        <input type="password" class = "input" id="password" name="password" placeholder="Password" required></input>
-        <input type="date" class="input" id="dateOfBirth" name="dateOfBirth" placeholder="Birthdate" required />
+        <input type="text" class = "input" id="name" name="name" id="name" placeholder="Name" required></input>
+        <input type="email" class = "input" id="email" name="email" id="email" placeholder="Email" required></input>
+        <input type="password" class = "input" id="password" name="password" id="password" placeholder="Password" required></input>
+        <input type="date" class="input" id="dateOfBirth" name="dateOfBirth" id="birthdate" placeholder="Birthdate" required />
         
 
-       <button type="submit class="btn" name="Add User" value = "Add" onclick="">Add User</button>
+       <button type="submit class="btn" name="Add User" value = "Add" onclick="adduserElement()">Add User</button>
 
     
   </form>
@@ -102,7 +67,37 @@ array=item;
       <th style="padding-left: 60px;">Age</th>
       <th style="padding-left: 60px;">Action</th>
     </tr>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+    var array = localStorage.getItem('array2');
+    var items = JSON.parse(array);
+    
+    array = items;
+    
+    document.write('<table border = "1" id = "table1">');
+    
+          
+      if(array === null )
+      {
+        alert("Records not found!");
+        document.getElementById("table1").style.display = "none";
+        
+      }     
+      else
+      {
+        for(var k = 0 ; k < array.length; k++)
+        { 
+          document.write('<td>'+ array[k].name + '</td>' );
+          document.write('<td>'+ array[k].email + '</td>' );
+          
+          document.write('</tr>');
+        }
+      }
+      document.write('</table>'); 
+    </script>
+
   </table>
+
  </div>
 
 </div>
