@@ -1,0 +1,25 @@
+form{
+	background-color:#F0E68C;
+
+}
+form div {
+clear: left;
+margin: 10px;
+padding: 0;
+padding-top: 5px;
+}
+fieldset
+{
+  background-color:#00FF7F;
+
+  
+}
+legend{
+	text-align: center;
+	font-family: bold;
+	font:1.5em Arial, Helvetica, sans-serif;
+}
+form div label {
+
+font: 0.9em Arial, Helvetica, sans-serif;
+}	

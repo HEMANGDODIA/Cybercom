@@ -1,0 +1,14 @@
+table,tr,td,th{
+	border: 1px solid black;
+	width: 50%;
+	height: 50%;
+}
+form table{
+	clear: left;
+	margin: 10px;
+
+}
+form{
+	margin: 20px;
+}
+
