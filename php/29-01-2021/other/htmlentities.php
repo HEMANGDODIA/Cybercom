@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['day']) && isset($_POST['month']) && isset($_POST['year'])) {
-	$day=$_POST['day'];
-	$month=$_POST['month'];
-	$year=$_POST['year'];
+	$day=htmlentities($_POST['day']);
+	$month=htmlentities($_POST['month']);
+	$year=$_POST['year']; // without htmlentities we can't secure html tag
 	if (!empty($day) && !empty($month) && !empty($year)) {
 		echo "it's $day $month $year";
 	}else{
