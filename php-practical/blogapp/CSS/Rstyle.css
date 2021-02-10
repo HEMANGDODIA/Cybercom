@@ -1,0 +1,100 @@
+Body {
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: white;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #0b6bd3;
+    outline: none;
+    text-decoration: none;
+}
+
+a {
+    color: #0675e8;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+button {
+    background-color: orange;
+    width: 100%;
+    color: white;
+    padding: 15px;
+    margin: 10px 0px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.regbtn {
+    background-color: orange;
+    width: 100%;
+    color: white;
+    padding: 15px;
+    margin: 10px 0px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.reg-btn {
+    color: white;
+}
+
+.reg-btn:hover {
+    background: none;
+    color: #004289;
+}
+
+form {
+    border: 1.5px solid black;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+textarea,
+select {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1.5px solid black;
+    box-sizing: border-box;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    margin: 10px 5px;
+}
+
+.container {
+    padding: 25px;
+    background-color: lightyellow;
+    width: 500px;
+    /* align-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.regcontainer {
+    padding: 25px;
+    width: 500px;
+    /* align-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
