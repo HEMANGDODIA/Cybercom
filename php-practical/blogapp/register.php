@@ -56,11 +56,11 @@ if (isset($_POST['submit'])) {
          <select id="prefix" name="prefix"> 
                 <option value=""> 
                 </option>
-                <option value="user">user
+                <option value="Mr.">Mr.
                 </option>
-                <option value="employee"> employee
+                <option value="Mrs."> Mrs.
                 </option>
-                <option value="CEO"> CEO
+                <option value="Ms."> Ms.
                 </option>
             </select>
         </div><br> 

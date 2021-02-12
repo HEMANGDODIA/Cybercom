@@ -57,30 +57,26 @@ include('./Templates/header.php');
             </thead>
             <tbody>
                 <?php
-                $user;
-                if (!$con)
-                    die("not connected");
                 if (@$result = mysqli_query($con, $query)) {
                     while ($row = mysqli_fetch_array($result)) { ?>
-                        <tr id="tr"  class="del<?php echo $row['id'];?>">
-                            <td><?php echo $row['']; ?>
+                            <td><?php echo $row['category_id']; ?>
                             <td><?php echo $row['title']; ?>
                             <td><?php echo $row['url']; ?>
                             <td><?php echo $row['content']; ?>
+                            <td><?php echo $row['meta_title']; ?>
+                            <td><?php echo $row['parent_category']; ?>
                             <td><?php echo $row['image']; ?>
-                            <td><?php echo $row['published_at']; ?>
-                            <td><?php echo $row['category']; ?>
                             <td>
                                 <form action="update.php" method="post">
                                     <input type="text" style="display:none;" name="type" value="contact_update">
-                                    <input type="text" style="display:none;" name="id" value="<?php echo $row['id']; ?>">
+                                    <input type="text" style="display:none;" name="id" value="<?php echo $row['category_id']; ?>">
                                     <input type="text" style="display:none;" name="title" value="<?php echo $row['title']; ?>">
                                     <input type="text" style="display:none;" name="url" value="<?php echo $row['url']; ?>">
-                                    <input type="text" style="display:none;" name="contact" value="<?php echo $row['contact']; ?>">
+                                    <input type="text" style="display:none;" name="contact" value="<?php echo $row['content']; ?>">
                                     <input type="text" style="display:none;" name="image" value="<?php echo $row['image']; ?>">
-                                    <input type="text" style="display:none;" name="published_at" value="<?php echo $row['published_at']; ?>">
+                                    <input type="text" style="display:none;" name="parent_category" value="<?php echo $row['parent_category']; ?>">
                                     
-                                    <input type="text" style="display:none;" name="category" value="<?php echo $row['category']; ?>">
+                                    <input type="text" style="display:none;" name="meta_title" value="<?php echo $row['meta_title']; ?>">
                                     <div>
                                         <button class='item-update' title='Update' type="submit">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -91,7 +87,7 @@ include('./Templates/header.php');
                             </td>
                             <td>
                                 <div>
-                                    <?php echo "<a href='#' class='delete' data-id='" . $row['id'] . "'><button class='item-delete'><i class='fa fa-trash' aria-hidden='true'></i></button></a>"; ?>
+                                    <?php echo "<a href='#' class='delete' data-id='" . $row['category_id'] . "'><button class='item-delete'><i class='fa fa-trash' aria-hidden='true'></i></button></a>"; ?>
                                 </div>
                             </td>
                         </tr>

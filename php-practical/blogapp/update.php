@@ -4,9 +4,8 @@ $type = $_POST['type'];
 $id = $_POST['id'];
 $title = $_POST['title'];
 $url = $_POST['url'];
-$context = $_POST['context'];
+$content = $_POST['content'];
 $image = $_POST['image'];
-$information = $_POST['information'];
 
 $category = $_POST['category'];
 
@@ -28,7 +27,7 @@ $category = $_POST['category'];
     <!--MAIN CONTENT -->
     <form action="insert_update_blog.php" id="form" method="POST">
         <div class="main-content">
-            <h1>Update Contact #<?php echo $id ?></h1>
+            <h1>Update Blog<?php echo $id ?></h1>
             <hr>
             <table class="table-1">
 

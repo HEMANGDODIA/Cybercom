@@ -1,8 +1,39 @@
+<?php
+include 'connect.php';
+if (isset($_POST['submit'])) {
+    $title=$_POST['title'];   
+	$content=$_POST['content'];
+    $url=$_POST['url'];
+    $metatitle=$_POST['metatitle'];
+    $parentcategory=$_POST['parentcategory'];
+    $image=$_POST['image'];
+	if ( !empty($title) && !empty($content) && !empty($url) && !empty($metatitle) && !empty($parentcategory) && !empty($image)  ) {
+	    
+         $title = mysqli_real_escape_string($con,$_POST['title'] );
+         $content = mysqli_real_escape_string($con,$_POST['content'] );
+         $url= mysqli_real_escape_string($con, $_POST['url']);
+         $metatitle = mysqli_real_escape_string($con, $_POST['metatitle']);
+         $parentcategory = mysqli_real_escape_string($con, $_POST['parentcategory']);
+         $image = mysqli_real_escape_string($con, $_POST['image']);
+         
+         $query = "INSERT INTO post_category ( title,content,url,meta_title,parent_category,image) 
+              VALUES( '$title','$content','$url','$metatitle','$parentcategory','$image')";
+       mysqli_query($con, $query);
+	
+	    
+	    
+	}
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Add Contacts</title>
+    <title>Add category</title>
     <link href="CSS/istyle.css" rel="stylesheet" media="all">
 
 
@@ -11,7 +42,7 @@
 <body>
 
     
-    <form action="insert_update_blog.php" method="POST" id="form" name="insertForm">
+    <form action="add_category.php" method="POST" id="form" name="insertForm">
         <div class="main-content">
             <h1>Add New Category</h1>
             <hr>
@@ -40,7 +71,7 @@
                         <textarea  name="content" rows="5" cols="30" ></textarea>
                     </td>
                     <td>
-                        <input type="text"  name="URL">
+                        <input type="text"  name="url">
                     </td>
                 </tbody>
                 <thead class="thead-1">
@@ -49,10 +80,10 @@
                 </thead>
                 <tbody>
                     <td>
-                        <input type="text" name="created">
+                        <input type="text" name="metatitle">
                     </td>
                     <td>
-                        <select name="category">
+                        <select name="parentcategory">
                         <option value="LIfestyle">Lifestyle</option>
                         <option value="Health">Health</option>
                         <option value="Education">Education</option>
@@ -74,7 +105,7 @@
 
 
             <input type="text" style="display:none;" name="type" value="contact_insert">
-            <input type="submit" name="addContact" value="Add">
+            <input type="submit" name="submit" value="Add">
     </form>
     </div>
     

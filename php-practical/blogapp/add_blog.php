@@ -1,3 +1,34 @@
+<?php
+include 'connect.php';
+if (isset($_POST['submit'])) {
+    $title=$_POST['title'];   
+	$content=$_POST['content'];
+    $url=$_POST['url'];
+    $publishedat=$_POST['publishedat'];
+    $category=$_POST['category'];
+    $image=$_POST['image'];
+	if ( !empty($title) && !empty($content) && !empty($url) && !empty($publishedat) && !empty($category) && !empty($image)  ) {
+	    
+         $title = mysqli_real_escape_string($con,$_POST['title'] );
+         $content = mysqli_real_escape_string($con,$_POST['content'] );
+         $url= mysqli_real_escape_string($con, $_POST['url']);
+         $publishedat = mysqli_real_escape_string($con, $_POST['publishedat']);
+         $category = mysqli_real_escape_string($con, $_POST['category']);
+         $image = mysqli_real_escape_string($con, $_POST['image']);
+         
+         $query = "INSERT INTO blog_post ( title,url,content,image,published_at,category) 
+              VALUES( '$title','$url','$content','$image','$publishedat','$category')";
+       mysqli_query($con, $query);
+	
+	    
+	    
+	}
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +71,7 @@
                         <textarea  name="content" rows="5" cols="30" ></textarea>
                     </td>
                     <td>
-                        <input type="text"  name="URL">
+                        <input type="text"  name="url">
                     </td>
                 </tbody>
                 <thead class="thead-1">
@@ -49,7 +80,7 @@
                 </thead>
                 <tbody>
                     <td>
-                        <input type="datetime-local" name="created">
+                        <input type="datetime-local" name="publishedat">
                     </td>
                     <td>
                         <select name="category">
@@ -74,7 +105,7 @@
 
 
             <input type="text" style="display:none;" name="type" value="contact_insert">
-            <input type="submit" name="addContact" value="Add">
+            <input type="submit" name="submit" value="Add">
     </form>
     </div>
     

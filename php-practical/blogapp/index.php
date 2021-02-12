@@ -36,11 +36,11 @@ include('./Templates/header.php');
 
         $start_from = ($page - 1) * $per_page_record;
 
-        $query = "SELECT * FROM info LIMIT $start_from, $per_page_record";
+        $query = "SELECT * FROM blog_post LIMIT $start_from, $per_page_record";
         $rs_result = mysqli_query($con, $query);
         ?>
         <form action="add_blog.php" method="POST">
-            <input type="submit" name="addblog" value="Add New Blog">
+            <input type="submit" name="submit" value="Add New Blog">
         </form>
 
         <div class="message"></div>
@@ -57,14 +57,14 @@ include('./Templates/header.php');
                 </tr>
             </thead>
             <tbody>
+            
+            
                 <?php
-                $user;
-                if (!$con)
-                    die("not connected");
+                
                 if (@$result = mysqli_query($con, $query)) {
                     while ($row = mysqli_fetch_array($result)) { ?>
-                        <tr id="tr"  class="del<?php echo $row['id'];?>">
-                            <td><?php echo $row['']; ?>
+                      
+                            <td><?php echo $row['id']; ?>
                             <td><?php echo $row['title']; ?>
                             <td><?php echo $row['url']; ?>
                             <td><?php echo $row['content']; ?>
@@ -77,7 +77,7 @@ include('./Templates/header.php');
                                     <input type="text" style="display:none;" name="id" value="<?php echo $row['id']; ?>">
                                     <input type="text" style="display:none;" name="title" value="<?php echo $row['title']; ?>">
                                     <input type="text" style="display:none;" name="url" value="<?php echo $row['url']; ?>">
-                                    <input type="text" style="display:none;" name="contact" value="<?php echo $row['contact']; ?>">
+                                    <input type="text" style="display:none;" name="contact" value="<?php echo $row['content']; ?>">
                                     <input type="text" style="display:none;" name="image" value="<?php echo $row['image']; ?>">
                                     <input type="text" style="display:none;" name="published_at" value="<?php echo $row['published_at']; ?>">
                                     
@@ -99,7 +99,14 @@ include('./Templates/header.php');
                     <?php
                     }
                 }
+                
+                
+                
+                
+                
+                
                 ?>
+
             </tbody>
         </table>
 
