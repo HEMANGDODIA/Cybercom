@@ -1,3 +1,5 @@
+<link href="CSS/istyle.css" rel="stylesheet" media="all">
+
 <?php
 
 $type = $_POST['type'];

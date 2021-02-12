@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
          $query = "INSERT INTO blog_post ( title,url,content,image,published_at,category) 
               VALUES( '$title','$url','$content','$image','$publishedat','$category')";
        mysqli_query($con, $query);
+       
 	
 	    
 	    

@@ -60,19 +60,19 @@ include('./Templates/header.php');
                 if (@$result = mysqli_query($con, $query)) {
                     while ($row = mysqli_fetch_array($result)) { ?>
                             <td><?php echo $row['category_id']; ?>
-                            <td><?php echo $row['title']; ?>
-                            <td><?php echo $row['url']; ?>
-                            <td><?php echo $row['content']; ?>
-                            <td><?php echo $row['meta_title']; ?>
+                            <td><?php echo $row['image']; ?> 
                             <td><?php echo $row['parent_category']; ?>
-                            <td><?php echo $row['image']; ?>
-                            <td>
-                                <form action="update.php" method="post">
+                            <!-- <td><?//php echo $row['title']; ?>
+                            <td><?//php echo $row['url']; ?>
+                            <td><?//php echo $row['content']; ?>
+                            <td><?//php echo $row['meta_title']; ?>-->
+                                                       <td>
+                                <form action="update_category.php" method="post">
                                     <input type="text" style="display:none;" name="type" value="contact_update">
-                                    <input type="text" style="display:none;" name="id" value="<?php echo $row['category_id']; ?>">
+                                    <input type="text" style="display:none;" name="category_id" value="<?php echo $row['category_id']; ?>">
                                     <input type="text" style="display:none;" name="title" value="<?php echo $row['title']; ?>">
                                     <input type="text" style="display:none;" name="url" value="<?php echo $row['url']; ?>">
-                                    <input type="text" style="display:none;" name="contact" value="<?php echo $row['content']; ?>">
+                                    <input type="text" style="display:none;" name="content" value="<?php echo $row['content']; ?>">
                                     <input type="text" style="display:none;" name="image" value="<?php echo $row['image']; ?>">
                                     <input type="text" style="display:none;" name="parent_category" value="<?php echo $row['parent_category']; ?>">
                                     

@@ -52,6 +52,7 @@ include('./Templates/header.php');
                     <th>Category Name</th>
                     <th>Title</th>
                     <th>Published Date</th>
+                    <th>Action</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -65,12 +66,14 @@ include('./Templates/header.php');
                     while ($row = mysqli_fetch_array($result)) { ?>
                       
                             <td><?php echo $row['id']; ?>
-                            <td><?php echo $row['title']; ?>
-                            <td><?php echo $row['url']; ?>
-                            <td><?php echo $row['content']; ?>
-                            <td><?php echo $row['image']; ?>
-                            <td><?php echo $row['published_at']; ?>
                             <td><?php echo $row['category']; ?>
+                            <td><?php echo $row['title']; ?>
+                            <td><?php echo $row['published_at']; ?>
+                          <!-- <td><?//php echo $row['url']; ?>
+                            <td><?//php echo $row['content']; ?>
+                            <td><?//php echo $row['image']; ?>  -->
+                            
+ 
                             <td>
                                 <form action="update.php" method="post">
                                     <input type="text" style="display:none;" name="type" value="contact_update">
