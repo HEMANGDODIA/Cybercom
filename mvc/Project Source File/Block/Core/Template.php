@@ -9,6 +9,7 @@ class Template
     protected $url=null;
     protected $request=null;
     protected $tabs=[];
+    protected $tableRow=null;
     protected $defaultTab=null;
 
 
@@ -16,6 +17,17 @@ class Template
     {
         $this->setUrl();
         $this->setRequest();
+    }
+    
+    public function setTableRow(\Model\Core\Table $tableRow)
+    {
+        $this->tableRow = $tableRow;
+        return $this;
+    }
+
+    public function getTableRow()
+    {
+        return $this->tableRow;
     }
     public function setRequest(){
         $this->request=\Mage::getRequest('Model\Core\Request');
@@ -53,8 +65,10 @@ class Template
     public function toHtml()
     {
         ob_start();
+        
         require_once $this->getTemplate();
         $content=ob_get_contents();
+        // var_dump($content);
         ob_end_clean();
         //echo $content;
         return $content;
@@ -118,14 +132,14 @@ class Template
         return $this->getController()->getMessage();
 
     }
-    public function setDefaultTab($defaultTab){
-        $this->defaultTab=$defaultTab;
+    public function setDefaultTab($defaultTab)
+    {
+        $this->defaultTab = $defaultTab;
         return $this;
     }
-    
-    public function getDefaultTab(){
+    public function getDefaultTab()
+    {
         return $this->defaultTab;
-        
     }
     public function setTabs(array $tabs=[]){
         $this->tabs=$tabs;
@@ -134,18 +148,18 @@ class Template
     public function getTabs(){
         return $this->tabs;
     }
-    public function addTab($key,$tab=[]){
+    public function addTab($key,array $tab){
         $this->tabs[$key]=$tab;
     }
-    public function getTab($key){
-        if(!array_key_exists($key,$this->tabs)){
-            return null;
-        }
-        return $this->tabs[$key];
-    }
+    // public function getTab($key){
+    //     if(!array_key_exists($key,$this->tabs)){
+    //         return null;
+    //     }
+    //     return $this->tabs[$key];
+    // }
     public function removeTab($key){
         if(!array_key_exists($key,$this->tabs)){
-            unset($this->trabs[$key]);
+            unset($this->tabs[$key]);
         }
 
     }

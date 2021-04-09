@@ -1,8 +1,8 @@
 <?php
 namespace Model\Admin;
+
 \Mage::loadFileByClassName('Model\Core\Session');
-use Model\Core\Session as CoreSession;
-class Session extends CoreSession
+class Session extends \Model\Core\Session
 {
     public function __construct()
     {

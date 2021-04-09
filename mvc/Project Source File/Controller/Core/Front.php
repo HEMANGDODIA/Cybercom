@@ -1,7 +1,7 @@
 <?php
 
 //\Mage::loadFileByClassName('Model\Core\Request');
-namespace Controller\Core;
+namespace Controller\Core; 
 
 class Front{
     public static function init(){
@@ -10,7 +10,7 @@ class Front{
         $controllerName=ucfirst($request->getControllerName());
         $actionName=$request->getActionName()."Action";
 
-        $controllerName=self::prepareClassName($controllerName, "Controller");
+        $controllerName=self::prepareClassName( "Controller",$controllerName);
         $controller=\Mage::getController($controllerName);
         $controller->$actionName();
     //     //echo __METHOD__; 
@@ -25,13 +25,15 @@ class Front{
     //     $controller->$method();
     }
 
-    public static function prepareClassName($key,$nameSpace)
+    public static function prepareClassName($key, $nameSpace)
     {
-        $className=$nameSpace." ".$key;
-        $className=str_replace('_',' ',$className);
-        $className=ucwords($className);
-        $className=str_replace(' ','\\',$className);
+
+        $className = $key . "\Admin\\" . $nameSpace;
+        $className = str_replace('_', ' ', $className);
+        $className = ucwords($className);
+        $className = str_replace(' ', '\\', $className);
         return $className;
+
     }
 }
 

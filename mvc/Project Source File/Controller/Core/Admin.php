@@ -1,101 +1,57 @@
 <?php
 namespace Controller\Core;
-use Block\Core\Layout as Layout;
-class Admin
+use Mage;
+use Exception;
+
+
+\Mage::loadFileByClassName('Controller\Core\Abstracts');
+\Mage::loadFileByClassName('Block\Core\Layout');
+class Admin extends Abstracts
 {
-    protected $request=null;
-    protected $layout=null;
-    protected $message=null;
     public function __construct()
     {
-        $this->setRequest();
+        parent::__construct();
     }
-    public function setRequest(){
-        $this->request=\Mage::getRequest('Model\Core\Request');
-        return $this;
-    }
-    public function getRequest(){
-        if (!$this->request) {
-            $this->setRequest();
-        }
-        return $this->request;
-    }
-
-    public function setLayout(Layout $layout = null)
+    public function setLayout(\Block\Core\Layout $layout = null)
     {
-        if (!$layout) {
-
+        if(!$layout)
+        {
             $layout = \Mage::getBlock('Block\Core\Layout');
-            // print_r($layout);
-            // die();
+        }
+        if (!($layout instanceof \Block\Core\Layout)) {
+            throw new \Exception('Must be instance of Block\Admin\Layout');
         }
         $this->layout = $layout;
         return $this;
-    }
-    public function getLayout()
-    {
-        if (!$this->layout) {
-            $this->setLayout();
-        }
-        return $this->layout;
-    }
-    public function renderLayout()
-    {
-        echo $this->getLayout()->toHtml();
-    }
-
-    public function redirect($actionName=Null,$controllerName=Null,$params=[],$resetParams=false){
-        
-        
-        header("location:{$this->getUrl($actionName,$controllerName,$params,$resetParams)}");
-        exit;
-    }
-
-    public function getUrl($actionName=Null,$controllerName=Null,$params=[],$resetParams=false){
-
-        $final=$this->getRequest()->getGet();
-        if ($resetParams) {
-
-            $final=[];
-        }
-        /*$final=[
-            'c' =>null,
-            'a' =>null,
-
-        ];*/
-        if($actionName==null){
-            $actionName=$this->getRequest()->getGet('a'); 
-        }
-        if ($controllerName==null) {
-            $controllerName=$this->getRequest()->getGet('c');
-        }
-        if ($params == null) {
-            $params = [];
-        }
-        
-        $final['c']=$controllerName;
-        $final['a']=$actionName;
-
-        if(is_array($params)){
-        $final=array_merge($final,$params);
-        }
-        $queryString=http_build_query($final);
-        unset($final);
-        return "http://localhost/cybercom/index.php?{$queryString}";
-        exit(0);
     }
     public function setMessage()
     {
         $this->message = \Mage::getModel('Model\Admin\Message');
         return $this;
     }
-    public function getMessage()
+    public function responseJson($status, $msg, $element)
     {
-        if (!$this->message) {
-            $this->setMessage();
-        }
-        return $this->message;
+        $response = [
+            'status' => $status,
+            'message' => $msg,
+            'element' => $element
+        ];
+        header("Content-type:application/json; charset=UTF-8");
+        echo json_encode($response);
     }
+    public function setSession()
+    {
+        $this->session = \Mage::getModel('Model\Admin\Session');
+        return $this;
+    }
+    public function getSession()
+    {
+        if (!$this->session) {
+            $this->setSession();
+        }
+        return $this->session;
+    }
+   
 }
 
 ?>

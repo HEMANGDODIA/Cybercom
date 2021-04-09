@@ -35,33 +35,42 @@ class Adapter{
     }
 
 
-    public function fetchAll($query =null){
-        if(!$this->isConnected()){
+    
+    public function fetchRow($query = null)
+    {
+
+        if (!$this->isConnected()) {
             $this->connection();
         }
-        
+
         $result = $this->getConnect()->query($query);
-        $rows = $result->fetch_all(MYSQLI_ASSOC);
-
-        if(!$rows){
-            return false;
+        if ($result) {
+            return $result->fetch_assoc();
         }
-        return $rows;
-    }
+        return null;
 
-    
-    public function fetchRow($query=null)
+    }
+    public function fetchAll($query = null)
     {
         if (!$this->isConnected()) {
             $this->connection();
         }
         $result = $this->getConnect()->query($query);
-        $rows = $result->fetch_assoc();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
         if (!$rows) {
             return false;
         }
         return $rows;
     }
+    public function fetchOne($query)
+    {
+        if(!$this->isConnected()){
+            $this->connection();
+        }
+        $result = $this->getConnect()->query($query);
+        return $result->num_rows;
+    }
+
 
     public function fetchPairs($query=null)
     {
@@ -84,6 +93,8 @@ class Adapter{
             $this->connection();
         }
         $result=$this->getConnect()->query($query);
+        // print_r($query);
+        // die();
         if(!$result){
             return false;
         }

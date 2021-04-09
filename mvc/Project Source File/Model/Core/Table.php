@@ -88,16 +88,17 @@ class Table{
             $values = "'" . implode("','", $this->data) . "')";
 
             $query = "INSERT INTO `" . $this->getTableName() . "` (" . $keys . ") VALUES (" . $values;
-          
-            $id = $this->getAdapter()->insert($query);
-            // echo "save";
+            //  echo $query;
             // die();
+            $id = $this->getAdapter()->insert($query);
+            //  echo "insert";
+            //   die();
            
         } else {
             $id = array_shift($this->data);
            
-            // echo "update";
-            // die();
+            //  echo "update";
+            //  die();
             $args = [];
             $sets = "";
             
@@ -116,13 +117,23 @@ class Table{
     }
    }
 
-    public function load($id)
+    // public function load($id)
+    // {
+    //     $value = (int) $id;
+    //     // echo '<pre>';
+    //     // print_r($id);
+    //     // die();
+    //     $query = "SELECT * FROM `{$this->getTableName()}`WHERE `{$this->getPrimaryKey()}`={$value}";
+    //     return $this->fetchRow($query);
+    // }
+    public function load($value, $key = null)
     {
-        $value = (int) $id;
-        // echo '<pre>';
-        // print_r($id);
-        // die();
-        $query = "SELECT * FROM `{$this->getTableName()}`WHERE `{$this->getPrimaryKey()}`={$value}";
+        if (!$key) {
+            $query = "select *  from  `{$this->getTableName()}` where `{$this->getPrimaryKey()}` = '{$value}'";
+        } else {
+            $query = "select *  from  `{$this->getTableName()}` where `{$key}` = '{$value}'";
+        }
+
         return $this->fetchRow($query);
     }
     public function fetchRow($query)
@@ -138,6 +149,7 @@ class Table{
     {
         if(!$query){
         $query = "SELECT * FROM  `{$this->getTableName()}`";
+       
         }
         $rows = $this->getAdapter()->fetchAll($query);
         if (!$rows) {
@@ -147,6 +159,7 @@ class Table{
             $row = new $this();
             $value = $row->setData($value);
         }
+        
         // echo "<pre>";
         // print_r($rows);
         // die();
@@ -158,7 +171,7 @@ class Table{
     }
     public function delete($id = null)
     {
-      
+    
         $query = "DELETE FROM `{$this->getTableName()}` where `{$this->getPrimaryKey()}`={$id}";
             //   echo $query;
             //   die();

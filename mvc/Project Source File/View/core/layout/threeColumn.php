@@ -21,9 +21,6 @@
           
 
 
-    <div class="card-body col-md-6" style="width:150px;margin-top:60px;margin-left:20px;margin-right:40px;">
-    <?php echo $this->getChild('left')->toHtml();?>
-    </div>
 
     <div class="card-body " style="height:100%;overflow:auto;">
       <?php 

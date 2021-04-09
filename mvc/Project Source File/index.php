@@ -92,13 +92,14 @@ class Mage{
         $className=str_replace(' ','\\',$className);
         return new $className();
     }
-    public static function getModel($className){
+    public static function getModel($className)
+    {
         self::loadFileByClassName($className);
-
-        $className=str_replace('\\',' ',$className);
-        $className=ucwords($className);
-        $className=str_replace(' ','\\',$className);
+        $className = str_replace('\\', ' ', $className);
+        $className = ucwords($className);
+        $className = str_replace(' ', '\\', $className);
         return new $className();
+
     }
 
     public static function getGrid($className){
@@ -136,12 +137,13 @@ class Mage{
 
         $className=str_replace('\\',' ',$className);
         $className=ucwords($className);
-        $className=str_replace(' ','/',$className);
+        $className=str_replace(' ','\\',$className);
         $className=$className.'.php';
+    
+        // print_r($className);
 
         require_once($className);
         
-        //print_r(get_declared_classes());
 
     }
  }

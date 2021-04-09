@@ -1,10 +1,11 @@
 <?php
-Mage::loadFileByClassName('Model_Core_Session');
-//Mage::loadFileByClassName('Model_Core_Message_Trait');
-class Model_Core_Message extends Model_Core_Session
+namespace Model\Core;
+
+\Mage::loadFileByClassName('Model\Core\Session');
+
+class Message extends \Model\Core\Session
 {
-    // protected $success = null;
-    // protected $failure = null;
+
     public function setSuccess($message)
     {
         $this->success = $message;
